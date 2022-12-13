@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1{
+            display: flex;
+        }
+        .comba{
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="d1">
+            <div class="comba">
+                <label for="">Thang:</label>
+                <input id="thang" type="text">
+            </div>
+          
+    
+        </div>
+        <div class="comba">
+            <label for="">So ngay:</label>
+            <input id="ngay" type="text">
+        </div>
+        <button type="button" onclick="fun()">HIEn THI SO Ngay Cua Thang</button>
+    </form>
+
+    <script>
+        function fun(){
+            var ng=document.getElementById("thang").value;
+            var arr=ng.split(" ");
+            var ar=[];
+            for (let index = 0; index < arr.length; index++) {
+                ar.push(arr[index].length);
+            }
+            var ma=0
+            for (let index = 0; index < arr.length; index++) {
+                if(ar[index]>ma) ma=ar[index];
+                
+            }
+            for (let index = 0; index < arr.length; index++) {
+                if(arr[index].length==ma){
+                    document.getElementById("ngay").value=index;
+                    console.log(index)
+                    break;
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
